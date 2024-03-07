@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:sportedup/features/authentication/screen/password_configuration/forget_password.dart';
 import 'package:sportedup/features/authentication/screen/signup/signup_screem.dart';
 import 'package:sportedup/utils/constants/colors.dart';
 import 'package:sportedup/utils/constants/image_strings.dart';
@@ -63,7 +64,7 @@ class LoginScreen extends StatelessWidget {
                           Text(TTexts.rememberMe),
                         ],
                       ),
-                      TextButton(onPressed: (){}, child: Text(TTexts.forgetPassword)),
+                      TextButton(onPressed: ()=>Get.to(()=>ForgetPassword()), child: Text(TTexts.forgetPassword)),
 
                     ],
                   ),
