@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:sportedup/features/authentication/screen/password_configuration/forget_password.dart';
 import 'package:sportedup/features/authentication/screen/signup/signup_screem.dart';
+import 'package:sportedup/navigation_menu.dart';
 import 'package:sportedup/utils/constants/colors.dart';
 import 'package:sportedup/utils/constants/image_strings.dart';
 import 'package:sportedup/utils/constants/sizes.dart';
@@ -72,7 +73,7 @@ class LoginScreen extends StatelessWidget {
 
                   SizedBox(height: TSizes.spaceBtwSections,),
                   ///Sign in button
-                  SizedBox(width: double.infinity,child: ElevatedButton(onPressed: (){}, child: Text(TTexts.signIn)),),
+                  SizedBox(width: double.infinity,child: ElevatedButton(onPressed: ()=>Get.to(()=>NavigationMenu()), child: Text(TTexts.signIn)),),
                   SizedBox(height: TSizes.spaceBtwSections,),
                   ///create account button
                   SizedBox(width: double.infinity,child: OutlinedButton(onPressed: (){Get.to(()=>SignupScreen());}, child: Text(TTexts.createAccount)),),
