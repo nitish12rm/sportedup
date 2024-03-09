@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:sportedup/features/shop/screen/home/home.dart';
 import 'package:sportedup/utils/constants/colors.dart';
 import 'package:sportedup/utils/helpers/helper_functions.dart';
 
@@ -36,7 +37,7 @@ class NavigationMenu extends StatelessWidget {
 
 class NavigationMenuController extends GetxController {
   final Rx<int> selectedIndex = 0.obs;
-  final screens = [Container(color: Colors.green,),Container(color: Colors.yellow,),Container(color: Colors.red,),Container(color: Colors.blue,),];
+  final screens = [HomeScreen(),Container(color: Colors.yellow,),Container(color: Colors.red,),Container(color: Colors.blue,),];
 }
 ///So here we are not using the sad state because the sad state will redraw the whole screen and that is what we don't want because it will take resources if they ask so many widgets to be rebuilt. Instead of that we are using the get X controller and to be exact we are we are creating a class now called navigation menu controller which is extending or we can say inheriting the gate X controller so it'll be listening to the index.
 ///But how exactly will it be listening to the index of the navigation menu bar well for that they get its controller half the EOPS method that actually listens to the variable
