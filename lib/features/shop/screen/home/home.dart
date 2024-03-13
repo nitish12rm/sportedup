@@ -17,11 +17,13 @@ import 'package:sportedup/utils/device/device_utility.dart';
 import 'package:sportedup/utils/helpers/helper_functions.dart';
 
 import '../../../../common/image/rounded_image.dart';
+import '../../../../common/layout/gridlayout.dart';
 import '../../../../common/widgets/custom_shape/container/circular_container.dart';
 import '../../../../common/widgets/custom_shape/container/primary_header_container.dart';
 import '../../../../common/widgets/custom_shape/container/search_container.dart';
 import '../../../../common/widgets/custom_shape/curved_edges/curved_edges_widget.dart';
 import '../../../../common/widgets/image_text_widget/vertical_image_text.dart';
+import '../../../../common/widgets/product_cards/product_cartd_vertical.dart';
 import '../../../../common/widgets/products/cart/cart_menu_icon.dart';
 import '../../../../common/widgets/texts/section_heading.dart';
 
@@ -75,19 +77,30 @@ class HomeScreen extends StatelessWidget {
             ),
 
             ///Body
-            const Padding(
-                padding: EdgeInsets.all(TSizes.defaultSpace),
-                child: Column(
-                  children: [
-                    ///Promo banner
-                    TPromoSlider(banner: [TImages.promoBanner1,TImages.promoBanner2,TImages.promoBanner3],),
-                  ],
-                )),
+            Padding(
+              padding: EdgeInsets.all(TSizes.defaultSpace),
+              child: Column(
+                children: [
+                  ///Promo banner slider
+                  TPromoSlider(
+                    banner: [
+                      TImages.promoBanner1,
+                      TImages.promoBanner2,
+                      TImages.promoBanner3
+                    ],
+                  ),
 
+                  ///Popular product
+                  TSectionHeading(title: 'Popular Products'),
+                  TGridLayout(itemCount: 10, itemBuilder: (_, index) => TProductCardVertical()),
+                ],
+              ),
+            ),
           ],
         ),
       ),
     );
   }
 }
+
 
