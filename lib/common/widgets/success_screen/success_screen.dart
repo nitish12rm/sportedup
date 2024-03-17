@@ -1,11 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:sportedup/common/styles/spacing_style.dart';
 
-import '../../../features/authentication/screen/login/login.dart';
-import '../../../utils/constants/image_strings.dart';
 import '../../../utils/constants/sizes.dart';
 import '../../../utils/constants/text_strings.dart';
 import '../../../utils/helpers/helper_functions.dart';
@@ -23,15 +18,15 @@ class SuccessScreen extends StatelessWidget {
           child: Column(children: [
             ///IMAGE
             Image(image: AssetImage(image),width: THelperFunctions.screenWidth()*0.6,),
-            SizedBox(height: TSizes.spaceBtwSections,),
+            const SizedBox(height: TSizes.spaceBtwSections,),
             ///TITLE AND SUBTITLE
             Text(title,style: Theme.of(context).textTheme.headlineMedium,textAlign: TextAlign.center,),
-            SizedBox(height: TSizes.spaceBtwItems,),
+            const SizedBox(height: TSizes.spaceBtwItems,),
             Text(subtitle,style: Theme.of(context).textTheme.labelMedium,textAlign: TextAlign.center,),
-            SizedBox(height: TSizes.spaceBtwSections,),
+            const SizedBox(height: TSizes.spaceBtwSections,),
 
             ///BUTTONS
-            SizedBox(width: double.infinity,child: ElevatedButton(onPressed: onPressed, child: Text(TTexts.tContinue)),),
+            SizedBox(width: double.infinity,child: ElevatedButton(onPressed: onPressed, child: const Text(TTexts.tContinue)),),
 
           ],),
         ),

@@ -4,7 +4,6 @@ import 'package:iconsax/iconsax.dart';
 import 'package:sportedup/features/authentication/screen/password_configuration/forget_password.dart';
 import 'package:sportedup/features/authentication/screen/signup/signup_screem.dart';
 import 'package:sportedup/navigation_menu.dart';
-import 'package:sportedup/utils/constants/colors.dart';
 import 'package:sportedup/utils/constants/image_strings.dart';
 import 'package:sportedup/utils/constants/sizes.dart';
 import 'package:sportedup/utils/constants/text_strings.dart';
@@ -21,7 +20,7 @@ class LoginScreen extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.only(
+          padding: const EdgeInsets.only(
             top: TSizes.appBarHeight,
             left: TSizes.defaultSpace,
             right: TSizes.defaultSpace,
@@ -37,7 +36,7 @@ class LoginScreen extends StatelessWidget {
                 children: [
                   Image(height: 150,image: AssetImage(dark? TImages.lightAppLogo:TImages.darkAppLogo)),
                   Text(TTexts.loginTitle,style: Theme.of(context).textTheme.headlineMedium,),
-                  SizedBox(height: TSizes.sm),
+                  const SizedBox(height: TSizes.sm),
                   Text(TTexts.loginSubTitle,style: Theme.of(context).textTheme.bodyMedium,),
                 ],
               ),
@@ -47,13 +46,13 @@ class LoginScreen extends StatelessWidget {
                 child: Column(children: [
                   ///EMAIL
                   TextFormField(
-                    decoration: InputDecoration(prefixIcon: Icon(Iconsax.direct_right),labelText: TTexts.email),
+                    decoration: const InputDecoration(prefixIcon: Icon(Iconsax.direct_right),labelText: TTexts.email),
                   ),
-                  SizedBox(height: TSizes.spaceBtwInputFields,),
+                  const SizedBox(height: TSizes.spaceBtwInputFields,),
                   TextFormField(
-                    decoration: InputDecoration(prefixIcon: Icon(Iconsax.password_check),labelText: TTexts.password,suffixIcon: Icon(Iconsax.eye_slash)),
+                    decoration: const InputDecoration(prefixIcon: Icon(Iconsax.password_check),labelText: TTexts.password,suffixIcon: Icon(Iconsax.eye_slash)),
                   ),
-                  SizedBox(height: TSizes.spaceBtwInputFields/2,),
+                  const SizedBox(height: TSizes.spaceBtwInputFields/2,),
                   ///Remember me & forgot password
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -62,30 +61,30 @@ class LoginScreen extends StatelessWidget {
 
                         children: [
                           Checkbox(value: true, onChanged: (value){}),
-                          Text(TTexts.rememberMe),
+                          const Text(TTexts.rememberMe),
                         ],
                       ),
-                      TextButton(onPressed: ()=>Get.to(()=>ForgetPassword()), child: Text(TTexts.forgetPassword)),
+                      TextButton(onPressed: ()=>Get.to(()=>const ForgetPassword()), child: const Text(TTexts.forgetPassword)),
 
                     ],
                   ),
                   ///Forgot password
 
-                  SizedBox(height: TSizes.spaceBtwSections,),
+                  const SizedBox(height: TSizes.spaceBtwSections,),
                   ///Sign in button
-                  SizedBox(width: double.infinity,child: ElevatedButton(onPressed: ()=>Get.to(()=>NavigationMenu()), child: Text(TTexts.signIn)),),
-                  SizedBox(height: TSizes.spaceBtwSections,),
+                  SizedBox(width: double.infinity,child: ElevatedButton(onPressed: ()=>Get.to(()=>const NavigationMenu()), child: const Text(TTexts.signIn)),),
+                  const SizedBox(height: TSizes.spaceBtwSections,),
                   ///create account button
-                  SizedBox(width: double.infinity,child: OutlinedButton(onPressed: (){Get.to(()=>SignupScreen());}, child: Text(TTexts.createAccount)),),
+                  SizedBox(width: double.infinity,child: OutlinedButton(onPressed: (){Get.to(()=>const SignupScreen());}, child: const Text(TTexts.createAccount)),),
                 ],),
               ),),
               ///Divider
               TFormDivider(dividerText: TTexts.orSignInWith.capitalize!),
-              SizedBox(width: TSizes.spaceBtwSections,),
+              const SizedBox(width: TSizes.spaceBtwSections,),
               ///Footer
-              SizedBox(height: TSizes.spaceBtwSections,),
+              const SizedBox(height: TSizes.spaceBtwSections,),
 
-              TSocialButton()
+              const TSocialButton()
             ],
           ),
         ),

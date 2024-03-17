@@ -11,14 +11,14 @@ final Widget ? Function(BuildContext,int) itemBuilder;
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
-        physics: NeverScrollableScrollPhysics(),
+        physics: const NeverScrollableScrollPhysics(),
         shrinkWrap: true,
         itemCount: itemCount,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
             mainAxisSpacing: TSizes.gridViewSpacing,
             crossAxisSpacing: TSizes.gridViewSpacing,
-            mainAxisExtent: 288),
+            mainAxisExtent: mainAxisExtent),
         itemBuilder: itemBuilder);
   }
 }

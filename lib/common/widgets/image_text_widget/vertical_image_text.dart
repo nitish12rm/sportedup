@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../../../utils/constants/colors.dart';
-import '../../../utils/constants/image_strings.dart';
 import '../../../utils/constants/sizes.dart';
 import '../../../utils/helpers/helper_functions.dart';
 class TVerticalImageText extends StatelessWidget {
@@ -24,7 +23,7 @@ class TVerticalImageText extends StatelessWidget {
             Container(
               height: 56,
               width: 56,
-              padding: EdgeInsets.all(TSizes.sm),
+              padding: const EdgeInsets.all(TSizes.sm),
               decoration: BoxDecoration(
                 color: backgroundColor??(THelperFunctions.isDarkMode(context)? TColors.black:TColors.white),
                 borderRadius: BorderRadius.circular(100),
@@ -35,7 +34,7 @@ class TVerticalImageText extends StatelessWidget {
                 color: TColors.dark,
               ),
             ),
-            SizedBox(height: TSizes.spaceBtwItems/2,),
+            const SizedBox(height: TSizes.spaceBtwItems/2,),
             SizedBox(width: 55,child: Text(title,style: Theme.of(context).textTheme.labelMedium!.apply(color:textColor),maxLines: 1,overflow: TextOverflow.ellipsis,))
           ],
         ),

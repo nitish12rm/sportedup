@@ -22,7 +22,7 @@ class TCircularIcon extends StatelessWidget {
       decoration: BoxDecoration(
 
         borderRadius: BorderRadius.circular(100),
-        color: backgroundColor!=null?backgroundColor:THelperFunctions.isDarkMode(context)?TColors.black.withOpacity(0.9):TColors.white.withOpacity(0.9),
+        color: backgroundColor ?? (THelperFunctions.isDarkMode(context)?TColors.black.withOpacity(0.9):TColors.white.withOpacity(0.9)),
 
       ),
       child: IconButton(onPressed: (){}, icon: Icon(icon,color: color,size: size,)),

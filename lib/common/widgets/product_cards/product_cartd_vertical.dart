@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:sportedup/common/container/rounded_container.dart';
 import 'package:sportedup/common/image/rounded_image.dart';
@@ -12,6 +10,7 @@ import 'package:sportedup/utils/constants/sizes.dart';
 import 'package:sportedup/utils/helpers/helper_functions.dart';
 
 import '../../icon/circular_icon.dart';
+import '../texts/TBrand_Title_With_Verification_Icon.dart';
 import '../texts/product_price_text.dart';
 
 class TProductCardVertical extends StatelessWidget {
@@ -21,7 +20,7 @@ class TProductCardVertical extends StatelessWidget {
   Widget build(BuildContext context) {
     final dark = THelperFunctions.isDarkMode(context);
     return GestureDetector(
-      onTap: (){},
+      onTap: () {},
       child: Container(
         width: 180,
         decoration: BoxDecoration(
@@ -34,12 +33,12 @@ class TProductCardVertical extends StatelessWidget {
             ///Thumbnail, wishlist button, Discount tag
             TRoundedContainer(
               height: 180,
-              padding: EdgeInsets.all(TSizes.sm),
+              padding: const EdgeInsets.all(TSizes.sm),
               backgroundColor: dark ? TColors.dark : TColors.light,
               child: Stack(
                 children: [
                   /// Thumbnail image
-                  TRoundedImage(
+                  const TRoundedImage(
                     imageUrl: TImages.productImage1,
                     applyImageRadius: true,
                   ),
@@ -48,7 +47,7 @@ class TProductCardVertical extends StatelessWidget {
                   Positioned(
                     top: 12,
                     child: TRoundedContainer(
-                      padding: EdgeInsets.symmetric(
+                      padding: const EdgeInsets.symmetric(
                           horizontal: TSizes.sm, vertical: TSizes.xs),
                       radius: TSizes.sm,
                       backgroundColor: TColors.secondary.withOpacity(0.8),
@@ -63,7 +62,7 @@ class TProductCardVertical extends StatelessWidget {
                   ),
 
                   ///Favourite icon button
-                  Positioned(
+                  const Positioned(
                       top: 0,
                       right: 0,
                       child: TCircularIcon(
@@ -73,42 +72,55 @@ class TProductCardVertical extends StatelessWidget {
                 ],
               ),
             ),
-      SizedBox(height: TSizes.spaceBtwItems/2,),
+            const SizedBox(
+              height: TSizes.spaceBtwItems / 2,
+            ),
+
             ///detail
-            Padding(
+            const Padding(
               padding: EdgeInsets.only(left: TSizes.sm),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  TProductTitleText(title: 'Green Nike Shoes',smallSize: true,),
-                  SizedBox(height: TSizes.spaceBtwItems/2,),
-                  Row(
-                    children: [
-                      Text('Nike',style: Theme.of(context).textTheme.labelMedium,maxLines: 1,overflow: TextOverflow.ellipsis,),
-                      SizedBox(width: TSizes.xs,),
-                      Icon(Iconsax.verify5,color: TColors.primary,size: TSizes.iconXs,)
-
-                    ],
+                  TProductTitleText(
+                    title: 'Green Nike Shoes',
+                    smallSize: true,
                   ),
+                  SizedBox(
+                    height: TSizes.spaceBtwItems / 2,
+                  ),
+                  TBrandTitleWithVerificationIcon(title: 'Nike',),
                 ],
               ),
             ),
+
             ///we used spacer  just to have a constant card size if we have max lines of one or two
-            Spacer(),
+            const Spacer(),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 ///Price
-                Padding(
-                  padding: const EdgeInsets.only(left:TSizes.sm),
-                  child: ProductPriceText(price: '35',),
+                const Padding(
+                  padding: EdgeInsets.only(left: TSizes.sm),
+                  child: ProductPriceText(
+                    price: '35',
+                  ),
                 ),
                 Container(
-                  decoration: BoxDecoration(color: TColors.dark,borderRadius: BorderRadius.only(topLeft: Radius.circular(TSizes.cardRadiusMd),bottomRight: Radius.circular(TSizes.cardRadiusMd))),
-                  child: SizedBox(
-                    width: TSizes.iconLg*1.2,
-                    height: TSizes.iconLg*1.2,
-                    child: Center(child: Icon(Iconsax.add,color: TColors.white,),),
+                  decoration: const BoxDecoration(
+                      color: TColors.dark,
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(TSizes.cardRadiusMd),
+                          bottomRight: Radius.circular(TSizes.cardRadiusMd))),
+                  child: const SizedBox(
+                    width: TSizes.iconLg * 1.2,
+                    height: TSizes.iconLg * 1.2,
+                    child: Center(
+                      child: Icon(
+                        Iconsax.add,
+                        color: TColors.white,
+                      ),
+                    ),
                   ),
                 )
               ],

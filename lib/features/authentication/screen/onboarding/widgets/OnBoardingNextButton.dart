@@ -19,7 +19,7 @@ class OnBoardingNextButton extends StatelessWidget {
         right: TSizes.defaultSpace,
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(
-              shape: CircleBorder(),
+              shape: const CircleBorder(),
               backgroundColor: dark ? TColors.primary : TColors.black),
           child: const Icon(
             Icons.arrow_forward_ios,

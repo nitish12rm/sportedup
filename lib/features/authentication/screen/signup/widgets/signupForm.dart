@@ -23,74 +23,74 @@ class TSignUpForm extends StatelessWidget {
               Expanded(
                 child: TextFormField(
                   expands: false,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                       labelText: TTexts.firstName,
                       prefixIcon: Icon(Iconsax.user)),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 width: TSizes.spaceBtwInputFields,
               ),
               Expanded(
                 child: TextFormField(
                   expands: false,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                       labelText: TTexts.lastName,
                       prefixIcon: Icon(Iconsax.user)),
                 ),
               ),
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: TSizes.spaceBtwInputFields,
           ),
           ///USERNAME
           TextFormField(
-            decoration: InputDecoration(
+            decoration: const InputDecoration(
                 prefixIcon: Icon(Iconsax.user_edit),
                 labelText: TTexts.username),
           ),
-          SizedBox(
+          const SizedBox(
             height: TSizes.spaceBtwInputFields,
           ),
           ///EMAIL
           TextFormField(
-            decoration: InputDecoration(
+            decoration: const InputDecoration(
                 prefixIcon: Icon(Iconsax.direct),
                 labelText: TTexts.email),
           ),
-          SizedBox(
+          const SizedBox(
             height: TSizes.spaceBtwInputFields,
           ),
           ///PHONE NUMBER
           TextFormField(
-            decoration: InputDecoration(
+            decoration: const InputDecoration(
                 prefixIcon: Icon(Iconsax.call),
                 labelText: TTexts.phoneNo),
           ),
-          SizedBox(
+          const SizedBox(
             height: TSizes.spaceBtwInputFields,
           ),
           ///PASSWORD
           TextFormField(
-            decoration: InputDecoration(
+            decoration: const InputDecoration(
                 prefixIcon: Icon(Iconsax.password_check),
                 labelText: TTexts.password,
                 suffixIcon: Icon(Iconsax.eye_slash)),
           ),
-          SizedBox(
+          const SizedBox(
             height: TSizes.spaceBtwInputFields,
           ),
           ///TERM AND CONDITION CHECKBOX
           Row(
             children: [
               SizedBox(height: 24,width: 24,child: Checkbox(value: true, onChanged: (value){}),),
-              SizedBox(width: TSizes.spaceBtwItems,),
+              const SizedBox(width: TSizes.spaceBtwItems,),
               Text.rich(TextSpan(children: [
-                TextSpan(text: '${TTexts.iAgreeTo}', style: Theme.of(context).textTheme.bodySmall),
-                TextSpan(text: '${TTexts.privacyPolicy}', style: Theme.of(context).textTheme.bodyMedium!.apply(color:dark?TColors.white:TColors.primary,decoration: TextDecoration.underline,decorationColor: dark?TColors.white:TColors.primary)),
-                TextSpan(text: '${TTexts.and}',style: Theme.of(context).textTheme.bodySmall),
-                TextSpan(text: '${TTexts.termsOfUse}', style: Theme.of(context).textTheme.bodyMedium!.apply(color:dark?TColors.white:TColors.primary,decoration: TextDecoration.underline,decorationColor: dark?TColors.white:TColors.primary)),
+                TextSpan(text: TTexts.iAgreeTo, style: Theme.of(context).textTheme.bodySmall),
+                TextSpan(text: TTexts.privacyPolicy, style: Theme.of(context).textTheme.bodyMedium!.apply(color:dark?TColors.white:TColors.primary,decoration: TextDecoration.underline,decorationColor: dark?TColors.white:TColors.primary)),
+                TextSpan(text: TTexts.and,style: Theme.of(context).textTheme.bodySmall),
+                TextSpan(text: TTexts.termsOfUse, style: Theme.of(context).textTheme.bodyMedium!.apply(color:dark?TColors.white:TColors.primary,decoration: TextDecoration.underline,decorationColor: dark?TColors.white:TColors.primary)),
 
               ])
 
@@ -99,8 +99,8 @@ class TSignUpForm extends StatelessWidget {
             ],
           ),
           ///SIGNUP BUTTON
-          SizedBox(height: TSizes.spaceBtwSections,),
-          SizedBox(width: double.infinity,child: ElevatedButton(onPressed: ()=>Get.to(()=>VerifyEmailAdress()), child: Text(TTexts.createAccount)),),
+          const SizedBox(height: TSizes.spaceBtwSections,),
+          SizedBox(width: double.infinity,child: ElevatedButton(onPressed: ()=>Get.to(()=>const VerifyEmailAdress()), child: const Text(TTexts.createAccount)),),
 
         ],
       ),
